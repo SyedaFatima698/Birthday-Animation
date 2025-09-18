@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Birthday Adil</title>
-      <link rel="icon" type="image/x-icon" href="./favicon.png">
+    <link rel="icon" type="image/x-icon" href="./favicon.png" />
     <link
       href="https://fonts.googleapis.com/css2?family=Pacifico&family=Quicksand:wght@400;700&family=Raleway:wght@600;800&display=swap"
       rel="stylesheet"
@@ -451,9 +451,8 @@
         <div id="confetti-container"></div>
 
         <p class="message">
-          Happy birthday Adil! On this special day, I
-          hope you're surrounded by joy, laughter, and all the things you love
-          the most.
+          Happy birthday Adil! On this special day, I hope you're surrounded by
+          joy, laughter, and all the things you love the most.
         </p>
 
         <p class="message">
@@ -490,8 +489,28 @@
         </div>
       </div>
     </div>
+    <audio id="birthday-song" src="./birthday.mp3"></audio>
 
     <script>
+      // Surprise button
+      const surpriseBtn = document.getElementById("surprise-btn");
+      surpriseBtn.addEventListener("click", function () {
+        // Create floating stars instead of hearts
+        for (let i = 0; i < 20; i++) {
+          createStar();
+        }
+
+        // Play birthday song
+        const song = document.getElementById("birthday-song");
+        song.play().catch((err) => {
+          console.log("Autoplay blocked, user must click button first", err);
+        });
+
+        // Show alert with personalized message
+        alert(
+          "🎂 Happy Born Day Adil! 🎉 May your day be as awesome as you are!"
+        );
+      });
       document.addEventListener("DOMContentLoaded", function () {
         // Create confetti
         const confettiContainer = document.getElementById("confetti-container");
